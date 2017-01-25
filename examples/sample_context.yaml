@@ -1,0 +1,16 @@
+# Operation context for example code generation
+# Example code present in the API documentation use dummy IDs for accountId, campaignId etc.
+# Code generated does not directly run API unless replaced by real values corresponding to
+# an account (preferably a test account).
+# The client.context provides replacements to such Ids
+example_context:
+    accountId: &accountId SAMPLE-ACCOUNT-ID
+    campaignId: &campaignId SAMPLE-CAMPAIN-ID
+    adGroupId: &adGroupId SAMPLE-ADGROUP-ID
+    adId: &adId SAMPLE-AD-ID
+    accountIds: [ *accountId ]
+    campaignIds: [ *campaignId ]
+    adGroupIds: [ *adGroupId ]
+    adIds: [ *adId ]
+    adTypes: [ "TEXT_AD2", "EXTENDED_TEXT_AD" ]
+

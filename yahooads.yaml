@@ -1,0 +1,27 @@
+# PromotionalAdsClient configuration
+promotionalads:
+
+  # Essential parameters
+  ###########################
+  # API credentials for authenticating SOAP messages
+  api_license: API-LICENSE-KEY
+  api_account_id: API-ACCOUNT-ID
+  api_account_pass: API-ACCOUNT-PASSWORD
+
+  # Optional Parameters
+  ###########################
+  # Cache LocationService returned co-location for each account
+  # In the json file blow. If the file is not present a file is created, and the
+  # location is added to the cache file.
+  location_cache: ./service_locations.json
+
+  # Account ID is needed for initializing the PromotionalAdsClient for production
+  # production environments. The account ID provided here is the default account ID
+  # that can be changed using setAccountId() method
+  account_id: SAMPLE-ACCOUNT-ID
+
+
+# Logging configuration
+logging:
+  format: "%(levelname) -10s %(asctime)s %(module)s:%(funcName)s()  %(message)s"
+  level: INFO
