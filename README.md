@@ -1,4 +1,4 @@
-# promotionalads-python-lib
+# yahooads-python-lib
 Client library for Yahoo Promotional Ads SOAP API. Implementation took inspiration from google's client library
 counterpart [googleads-python-lib](https://github.com/googleads/googleads-python-lib). It is based on suds SOAP library
 and provide access to Promotional Ads API using python.
