@@ -14,6 +14,56 @@ and provide access to Promotional Ads API using python.
 3. Copy the [yahooads.yaml](https://github.com/becomejapan/promotionalads-python-lib/blob/master/yahooads.yaml)
    file to your home directory and fill in the account access credentials.
 
+## Getting Started
+
+The library reads the API authentication information from the `yahooads.yaml` under the default key `promotionalads`
+The default location to look for this file is your home directory. You can override the default file and the key
+where the authentication information can be found.
+
+```python
+# Using the default configuration file in home directory
+client = promotionalads.PromotionalAdsClient.LoadFromConfiguration()
+
+# Using the specified YAML file with a key
+client = promotionalads.PromotionalAdsClient.LoadFromConfiguration(config_file='my_folder/config.yaml',
+                                                                   key='credentials')
+```
+
+The use of library is similar to the `googleads-python-lib`. A service object can be created using `client.GetService`
+method of client and `get`, `mutate` operations can be performed by passing the appropriate operands composed in the form
+of python dictionaries as illustrated in the following example.
+
+```python
+ACCOUNT_ID = "SAMPLE-ACCOUNT-ID"
+CAMPAIGN_ID = "SAMPLE-CAMPAIGN-ID"
+
+service = client.GetService('CampaignService')
+selector = {'accountId': ACCOUNT_ID,
+            'campaignIds': [CAMPAIGN_ID]}
+response = service.get(selector)
+```
+
+The library provide access to the underlaying suds client object through `suds_client` attribute. You can use suds
+features in constructing the API calls as follows.
+
+```python
+service = client.GetService('CampaignService')
+suds_client = service.suds_client
+selector = suds_client.factory.create("CampaignSelector")
+selector.accountId = ACCOUNT_ID
+selector.campaignIds = [CAMPAIGN_ID]
+response = service.get(selector)
+```
+
+For production use, Promotional Ads account ID can be set using the YAML file by setting `account_id` field. The
+account can be changed at runtime as follows.
+
+```python
+client = yahooads.PromotionalAdsClient.LoadFromConfiguration()
+client.setAccountId(new_account_id)
+```
+
+
 ## Examples
 
 The examples found in [examples](https://github.com/becomejapan/promotionalads-python-lib/tree/master/examples) folder
