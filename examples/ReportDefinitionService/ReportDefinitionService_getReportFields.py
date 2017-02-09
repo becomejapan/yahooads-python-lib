@@ -32,9 +32,11 @@ logging.basicConfig(level=logging.INFO)
 
 SERVICE = 'ReportDefinitionService'
 OPERATION = 'getReportFields'
-OPERAND = {
-  "reportType": "LANDING_PAGE_URL"
-}
+# Correction to auto-generated code
+# OPERAND = {
+#  "reportType": "LANDING_PAGE_URL"
+# }
+OPERAND = "LANDING_PAGE_URL"
 
 """
 SAMPLE RESPONSE = {
