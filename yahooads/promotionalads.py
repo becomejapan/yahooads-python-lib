@@ -73,6 +73,13 @@ class PromotionalAdsClient(object):
         self.api_license = api_license
         self.api_account_id = api_account_id
         self.api_account_pass = api_account_pass
+        # Flowing is to avoid pesky warnings (unresolved references) in PyCharm actual settings follows
+        self.on_behalf_account_id = None
+        self.on_behalf_account_pass = None
+        self.account_id = None
+        self.sandbox = False
+        self.location_cache = None
+        self.context = None
         for param, default_value in OPTIONAL_PARAMETERS.items():
             setattr(self, param, kwargs.get(param, default_value))
 
@@ -155,8 +162,8 @@ class PromotionalAdsClient(object):
                         with open(self.location_cache, 'w') as cf:
                             json.dump(location_dict, cf, indent=4)
                     except Exception as e:
-                        raise self.ServiceLocationError("Couldn't save service location in cache '{}'\n"
-                                                        "Error {}".format(self.location_cahce, e))
+                        raise errors.ServiceLocationError("Couldn't save service location in cache '{}'\n"""
+                                                          "Error {}".format(self.location_cache, e))
                     return location
             else:  # No caching get location form API
                 return self._get_service_location_from_API()
@@ -174,4 +181,3 @@ class PromotionalAdsClient(object):
                 raise Exception("Failed get service location for '{}'".format(self.account_id))
         except Exception as e:
             raise errors.ServiceLocationError(e)
-
