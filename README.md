@@ -26,7 +26,7 @@ client = promotionalads.PromotionalAdsClient.LoadFromConfiguration()
 
 # Using the specified YAML file with a key
 client = promotionalads.PromotionalAdsClient.LoadFromConfiguration(config_file='my_folder/config.yaml',
-                                                                   key='credentials')
+                                                                   key='promotionalads')
 ```
 
 The use of library is similar to the `googleads-python-lib`. A service object can be created using `client.GetService`
