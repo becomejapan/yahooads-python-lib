@@ -26,7 +26,7 @@ from suds.client import Client
 from suds.sax.element import Element
 
 # API version supported by the this Client library
-PROMOTIONALADS_API_VERSION = '6.2'
+PROMOTIONALADS_API_VERSION = '6.3'
 
 # Service Locations
 DEFAULT_SERVICE_LOCATION = 'ss.yahooapis.jp'
