@@ -16,6 +16,7 @@
 
 import logging
 import re
+# noinspection PyPackageRequirements
 import suds
 
 

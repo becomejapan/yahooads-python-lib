@@ -15,7 +15,10 @@
 """Suds utility functions from googleads-python-lib"""
 
 import logging
+
+# noinspection PyPackageRequirements
 import suds
+# noinspection PyPackageRequirements
 from suds import sudsobject
 from collections import OrderedDict
 

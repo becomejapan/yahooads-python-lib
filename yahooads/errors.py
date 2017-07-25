@@ -24,6 +24,7 @@ class WebFaultError(YahooAdsError):
     """"Wrapper for error thrown by the web service"""
     pass
 
+
 class ServiceLocationError(YahooAdsError):
     """"Error in LocationService when requesting service end-point"""
     pass
