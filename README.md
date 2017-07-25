@@ -11,7 +11,7 @@ and provide access to Promotional Ads API using python.
 
    `$ python setup.py build install`
 
-3. Copy the [yahooads.yaml](https://github.com/becomejapan/promotionalads-python-lib/blob/master/yahooads.yaml)
+3. Copy the [yahooads.yaml](https://github.com/becomejapan/yahooads-python-lib/blob/master/yahooads.yaml)
    file to your home directory and fill in the account access credentials.
 
 ## Getting Started
