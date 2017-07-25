@@ -30,7 +30,7 @@ CLASSIFIERS = [
 
 extra_params = {}
 if sys.version_info[0] == 3:
-  extra_params['use_2to3'] = True
+    extra_params['use_2to3'] = True
 
 setup(name='yahooads',
       version=common.VERSION,

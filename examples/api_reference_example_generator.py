@@ -20,6 +20,8 @@ import urllib2
 import argparse
 import json
 import os
+# noinspection PyPackageRequirements
+# for PyCharm to ignore this
 import yaml
 
 from collections import OrderedDict
@@ -143,7 +145,7 @@ def extract_operand(soap_xml, operation, service, request=True):
     #    <RequestHeader> ... <RequestHeader>  => <RequestHeader> ... </RequestHeader>
     soap_xml = re.sub(r"<RequestHeader>(\s+</SOAP-ENV:Header>)", r"</RequestHeader>\1", soap_xml)
 
-    def fix_xsi_type(path, key, value):
+    def fix_xsi_type(_, key, value):
         """replace @xsi:type keys created by xmltodict with xsi_type expected by promotionalads-python-lib"""
         if key == "@xsi:type":
             return "xsi_type", value

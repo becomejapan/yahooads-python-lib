@@ -13,7 +13,7 @@
 # limitations under the License.
 
 """Suds based Client library for the Yahoo PromotionalAds API."""
-
+# noinspection PyPackageRequirements
 import yaml
 import os
 import json
@@ -22,7 +22,9 @@ import logging
 import common
 import errors
 
+# noinspection PyPackageRequirements
 from suds.client import Client
+# noinspection PyPackageRequirements
 from suds.sax.element import Element
 
 # API version supported by the this Client library
