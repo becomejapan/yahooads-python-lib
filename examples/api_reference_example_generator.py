@@ -258,8 +258,8 @@ def read_context(context_file, context_key="example_context"):
 
 def main():
     cmd_parser = argparse.ArgumentParser()
-    cmd_parser.add_argument('-s', '--services', help='API services to generate code', required=False, nargs='*',
-                            type=list, default=config["API_SERVICES"])
+    cmd_parser.add_argument('-s', '--services', help='API services to generate code', required=False, nargs='+',
+                            default=config["API_SERVICES"])
     cmd_parser.add_argument('-v', '--api-version', help='API version to use', required=False,
                             default=config["API_VERSION"])
     cmd_parser.add_argument('-t', '--template', help='Sample code template', required=False,
