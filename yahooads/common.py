@@ -30,7 +30,7 @@ logging.getLogger('suds.client').addFilter(util.SudsCredentialsFilter)
 logging.getLogger('suds.transport.http').addFilter(util.TransportCredentialsFilter)
 
 # version of this client library
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 
 
 class SudsServiceProxy(object):
