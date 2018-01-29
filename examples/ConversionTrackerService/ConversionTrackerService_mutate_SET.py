@@ -37,7 +37,6 @@ OPERAND = {
   "accountId": "SAMPLE-ACCOUNT-ID", 
   "operand": [
     {
-      "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
       "xsi_type": "WebConversion", 
       "conversionTrackerId": "1193194", 
       "conversionTrackerName": "WebConversion_update", 
@@ -49,7 +48,6 @@ OPERAND = {
       "crossDeviceConversionFlag": "TRUE"
     }, 
     {
-      "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
       "xsi_type": "AppConversion", 
       "conversionTrackerId": "1193193", 
       "conversionTrackerName": "AppConversion_update", 
@@ -65,7 +63,6 @@ OPERAND = {
 
 """
 SAMPLE RESPONSE = {
-  "@xmlns": "http://ss.yahooapis.jp/V6", 
   "rval": {
     "ListReturnValue.Type": "AccountTrackingUrlReturnValue", 
     "Operation.Type": "SET", 
@@ -73,7 +70,6 @@ SAMPLE RESPONSE = {
       {
         "operationSucceeded": "true", 
         "conversionTracker": {
-          "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
           "xsi_type": "AppConversion", 
           "accountId": "SAMPLE-ACCOUNT-ID", 
           "conversionTrackerId": "1193198", 
@@ -97,7 +93,6 @@ SAMPLE RESPONSE = {
       {
         "operationSucceeded": "true", 
         "conversionTracker": {
-          "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
           "xsi_type": "AppConversion", 
           "accountId": "SAMPLE-ACCOUNT-ID", 
           "conversionTrackerId": "1193197", 
@@ -125,7 +120,6 @@ SAMPLE RESPONSE = {
       {
         "operationSucceeded": "true", 
         "conversionTracker": {
-          "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
           "xsi_type": "AppConversion", 
           "accountId": "SAMPLE-ACCOUNT-ID", 
           "conversionTrackerId": "1193196", 
@@ -148,7 +142,6 @@ SAMPLE RESPONSE = {
       {
         "operationSucceeded": "true", 
         "conversionTracker": {
-          "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
           "xsi_type": "WebConversion", 
           "accountId": "SAMPLE-ACCOUNT-ID", 
           "conversionTrackerId": "1193194", 

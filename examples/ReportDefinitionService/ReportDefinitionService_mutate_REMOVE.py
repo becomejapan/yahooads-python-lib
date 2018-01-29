@@ -42,7 +42,6 @@ OPERAND = {
 
 """
 SAMPLE RESPONSE = {
-  "@xmlns": "http://ss.yahooapis.jp/V6", 
   "rval": {
     "ListReturnValue.Type": "ReportDefinitionReturnValue", 
     "Operation.Type": "REMOVE", 

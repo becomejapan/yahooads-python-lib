@@ -33,13 +33,11 @@ logging.basicConfig(level=logging.INFO)
 SERVICE = 'ReportDefinitionService'
 OPERATION = 'getReportFields'
 OPERAND = {
-  "@xmlns": "http://ss.yahooapis.jp/V6", 
   "reportType": "LANDING_PAGE_URL"
 }
 
 """
 SAMPLE RESPONSE = {
-  "@xmlns": "http://ss.yahooapis.jp/V6", 
   "rval": {
     "fields": [
       {

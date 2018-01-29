@@ -55,7 +55,112 @@ OPERAND = {
 }
 
 """
-SAMPLE RESPONSE = {}
+SAMPLE RESPONSE = {
+  "rval": {
+    "ListReturnValue.Type": "CampaignTargetReturnValue", 
+    "Operation.Type": "ADD", 
+    "values": [
+      {
+        "operationSucceeded": "true", 
+        "campaignTarget": {
+          "accountId": "SAMPLE-ACCOUNT-ID", 
+          "campaignId": "SAMPLE-CAMPAIN-ID", 
+          "campaignName": "Sample", 
+          "target": {
+            "xsi_type": "ScheduleTarget", 
+            "targetId": "011112222", 
+            "targetType": "SCHEDULE", 
+            "dayOfWeek": "MONDAY", 
+            "startHour": "21", 
+            "startMinute": "ZERO", 
+            "endHour": "24", 
+            "endMinute": "ZERO"
+          }, 
+          "bidMultiplier": "1"
+        }
+      }, 
+      {
+        "operationSucceeded": "true", 
+        "campaignTarget": {
+          "accountId": "SAMPLE-ACCOUNT-ID", 
+          "campaignId": "SAMPLE-CAMPAIN-ID", 
+          "campaignName": "Sample2", 
+          "target": {
+            "xsi_type": "LocationTarget", 
+            "targetId": "JP-0001-0010", 
+            "targetType": "LOCATION", 
+            "provinceNameJA": "\u6771\u4eac\u90fd", 
+            "provinceNameEN": "Tokyo", 
+            "cityNameJA": "\u6e2f\u533a", 
+            "cityNameEN": "Minatoku", 
+            "excludedType": "INCLUDED", 
+            "targetingStatus": "ACTIVE"
+          }, 
+          "bidMultiplier": "0.95"
+        }
+      }, 
+      {
+        "operationSucceeded": "true", 
+        "campaignTarget": {
+          "accountId": "SAMPLE-ACCOUNT-ID", 
+          "campaignId": "SAMPLE-CAMPAIN-ID", 
+          "campaignName": "Sample", 
+          "target": {
+            "xsi_type": "NetworkTarget", 
+            "targetId": "811112222", 
+            "targetType": "NETWORK", 
+            "networkCoverageType": "YAHOO_SEARCH"
+          }
+        }
+      }, 
+      {
+        "operationSucceeded": "true", 
+        "campaignTarget": {
+          "accountId": "SAMPLE-ACCOUNT-ID", 
+          "campaignId": "SAMPLE-CAMPAIN-ID", 
+          "campaignName": "Sample", 
+          "target": {
+            "xsi_type": "PlatformTarget", 
+            "targetId": "811112222", 
+            "targetType": "PLATFORM", 
+            "platformType": "SMART_PHONE"
+          }, 
+          "bidMultiplier": "3.0"
+        }
+      }, 
+      {
+        "operationSucceeded": "true", 
+        "campaignTarget": {
+          "accountId": "SAMPLE-ACCOUNT-ID", 
+          "campaignId": "SAMPLE-CAMPAIN-ID", 
+          "campaignName": "Sample", 
+          "target": {
+            "xsi_type": "PlatformTarget", 
+            "targetId": "811112223", 
+            "targetType": "PLATFORM", 
+            "platformType": "TABLET"
+          }, 
+          "bidMultiplier": "2.0"
+        }
+      }, 
+      {
+        "operationSucceeded": "true", 
+        "campaignTarget": {
+          "accountId": "SAMPLE-ACCOUNT-ID", 
+          "campaignId": "SAMPLE-CAMPAIN-ID", 
+          "campaignName": "Sample", 
+          "target": {
+            "xsi_type": "PlatformTarget", 
+            "targetId": "811112223", 
+            "targetType": "PLATFORM", 
+            "platformType": "DESKTOP"
+          }, 
+          "bidMultiplier": "0"
+        }
+      }
+    ]
+  }
+}
 """
 
 

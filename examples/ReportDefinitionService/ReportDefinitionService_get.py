@@ -46,7 +46,6 @@ OPERAND = {
 
 """
 SAMPLE RESPONSE = {
-  "@xmlns": "http://ss.yahooapis.jp/V6", 
   "rval": {
     "totalNumEntries": "2", 
     "Page.Type": "ReportDefinitionPage", 

@@ -50,8 +50,6 @@ OPERAND = {
 
 """
 SAMPLE RESPONSE = {
-  "@xmlns": "http://ss.yahooapis.jp/V70", 
-  "@xmlns:ns2": "http://ss.yahooapis.jp/V70/Campaign", 
   "rval": {
     "ListReturnValue.Type": "CampaignReturnValue", 
     "Operation.Type": "REMOVE", 
@@ -78,7 +76,6 @@ SAMPLE RESPONSE = {
             "biddingStrategyType": "TARGET_SPEND", 
             "biddingStrategySource": "CAMPAIGN", 
             "biddingScheme": {
-              "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
               "xsi_type": "TargetSpendBiddingScheme", 
               "biddingStrategyType": "TARGET_SPEND", 
               "bidCeiling": "50000", 
@@ -89,14 +86,12 @@ SAMPLE RESPONSE = {
           "adServingOptimizationStatus": "ROTATE_INDEFINITELY", 
           "settings": [
             {
-              "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
               "xsi_type": "GeoTargetTypeSetting", 
               "type": "GEO_TARGET_TYPE_SETTING", 
               "positiveGeoTargetType": "DONT_CARE", 
               "negativeGeoTargetType": "DONT_CARE"
             }, 
             {
-              "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
               "xsi_type": "TargetingSetting", 
               "type": "TARGET_LIST_SETTING", 
               "targetAll": "DEACTIVE"
@@ -147,7 +142,6 @@ SAMPLE RESPONSE = {
             "biddingStrategyType": "PAGE_ONE_PROMOTED", 
             "biddingStrategySource": "CAMPAIGN", 
             "biddingScheme": {
-              "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
               "xsi_type": "PageOnePromotedBiddingScheme", 
               "biddingStrategyType": "PAGE_ONE_PROMOTED", 
               "bidCeiling": "50000", 
@@ -161,14 +155,12 @@ SAMPLE RESPONSE = {
           "adServingOptimizationStatus": "ROTATE_INDEFINITELY", 
           "settings": [
             {
-              "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
               "xsi_type": "GeoTargetTypeSetting", 
               "type": "GEO_TARGET_TYPE_SETTING", 
               "positiveGeoTargetType": "DONT_CARE", 
               "negativeGeoTargetType": "DONT_CARE"
             }, 
             {
-              "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
               "xsi_type": "TargetingSetting", 
               "type": "TARGET_LIST_SETTING", 
               "targetAll": "DEACTIVE"
@@ -204,7 +196,6 @@ SAMPLE RESPONSE = {
             "biddingStrategyType": "MANUAL_CPC", 
             "biddingStrategySource": "CAMPAIGN", 
             "biddingScheme": {
-              "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
               "xsi_type": "ManualCpcBiddingScheme", 
               "biddingStrategyType": "MANUAL_CPC"
             }
@@ -213,14 +204,12 @@ SAMPLE RESPONSE = {
           "adServingOptimizationStatus": "ROTATE_INDEFINITELY", 
           "settings": [
             {
-              "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
               "xsi_type": "GeoTargetTypeSetting", 
               "type": "GEO_TARGET_TYPE_SETTING", 
               "positiveGeoTargetType": "DONT_CARE", 
               "negativeGeoTargetType": "DONT_CARE"
             }, 
             {
-              "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
               "xsi_type": "TargetingSetting", 
               "type": "TARGET_LIST_SETTING", 
               "targetAll": "DEACTIVE"

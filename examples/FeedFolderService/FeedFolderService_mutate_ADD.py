@@ -53,7 +53,33 @@ OPERAND = {
 }
 
 """
-SAMPLE RESPONSE = {}
+SAMPLE RESPONSE = {
+  "rval": {
+    "ListReturnValue.Type": "FeedFolderReturnValue", 
+    "Operation.Type": "ADD", 
+    "values": {
+      "operationSucceeded": "true", 
+      "feedFolder": {
+        "accountId": "SAMPLE-ACCOUNT-ID", 
+        "feedFolderId": "113", 
+        "feedFolderName": "myfeedname", 
+        "placeholderType": "AD_CUSTOMIZER", 
+        "feedAttribute": [
+          {
+            "feedAttributeId": "2000000001", 
+            "feedAttributeName": "myfeedattname1", 
+            "placeholderField": "AD_CUSTOMIZER_INTEGER"
+          }, 
+          {
+            "feedAttributeId": "2000000002", 
+            "feedAttributeName": "myfeedattname2", 
+            "placeholderField": "AD_CUSTOMIZER_PRICE"
+          }
+        ]
+      }
+    }
+  }
+}
 """
 
 

@@ -43,7 +43,6 @@ OPERAND = {
 
 """
 SAMPLE RESPONSE = {
-  "@xmlns": "http://ss.yahooapis.jp/V6", 
   "rval": {
     "ListReturnValue.Type": "AdGroupReturnValue", 
     "Operation.Type": "REMOVE", 
@@ -59,7 +58,6 @@ SAMPLE RESPONSE = {
         "adGroupName": "test adGroup.", 
         "userStatus": "ACTIVE", 
         "settings": {
-          "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance", 
           "xsi_type": "TargetingSetting", 
           "criterionType": "TARGET_LIST", 
           "targetAll": "ACTIVE"
