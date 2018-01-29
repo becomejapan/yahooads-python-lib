@@ -137,24 +137,24 @@ def extract_operand(soap_xml, operation, service, request=True):
     #    with namespace aware parsing doesn't work well yet.
     # 2. some SOAP messages have "soapenv" instead of "SOAP-ENV" expected in extracting soap_body
     # 3. Erroneous spaces in some attributes (/feedAttributeName /placeholdeType) throws off the xmltodict.parse()
-    soap_xml = soap_xml.replace("ns1:", "") \
-                       .replace("ns2:", "") \
-                       .replace("soapenv", "SOAP-ENV") \
-                       .replace("/feed AttributeName", "/feedAttributeName") \
-                       .replace("/placeholde Type", "/placeholdeType")
+    soap_xml = soap_xml.replace("soapenv", "SOAP-ENV") \
+                       .replace(":feed AttributeName", ":feedAttributeName") \
+                       .replace(":placeholde Type", ":placeholderType")
     # 5. Correct some ill-formed request header tags in SOAP messages
-    #    <RequestHeader> ... <RequestHeader>  => <RequestHeader> ... </RequestHeader>
-    soap_xml = re.sub(r"<RequestHeader>(\s+</SOAP-ENV:Header>)", r"</RequestHeader>\1", soap_xml)
+    #    <ns1:RequestHeader> ... <ns1:RequestHeader>  => <ns1:RequestHeader> ... </ns1:RequestHeader>
+    soap_xml = re.sub(r"<(ns[1-9]:)RequestHeader>(\s+</SOAP-ENV:Header>)", r"</\1RequestHeader>\2", soap_xml)
 
     def fix_xsi_type(_, key, value):
         """replace @xsi:type keys created by xmltodict with xsi_type expected by promotionalads-python-lib"""
         if key == "@xsi:type":
-            return "xsi_type", value
+            return "xsi_type", re.sub("^ns\d+:", "", value)  # stip-off namespaces from value
+        elif key.startswith("@xmlns"):  # Remove node attributes if any
+            return None
         else:
             return key, value
-
+    namespaces = {'ns1': '', 'ns2': ''}  # Remove any namespace references from Keys
     try:
-        operation_dict = xmltodict.parse(soap_xml, postprocessor=fix_xsi_type)
+        operation_dict = xmltodict.parse(soap_xml, postprocessor=fix_xsi_type, namespaces=namespaces)
     except Exception as e:
         print "\tCouldn't parse XML '{}:{}' exception {}".format(service, operation, e)
         return {}
@@ -171,9 +171,12 @@ def extract_operand(soap_xml, operation, service, request=True):
             print "\tUnrecognized operation {}".format(operation)
             return {}
     except Exception as e:
+        # Handle MORE oddities in the documentation here!
         if (service == "ReportDefinitionService" and operation == "getReportFields") or \
                 (service == "LocationService" and operation == "get"):  # has no selector
             return soap_body[operation]
+        elif service == "CampaignTargetService" and operation == "get":
+            return soap_body["mutateResponse"]
         else:
             print "\tCouldn't extract operation '{}:{}' exception {}".format(service, operation, e)
             return {}
