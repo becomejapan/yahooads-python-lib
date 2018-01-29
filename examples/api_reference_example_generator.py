@@ -138,6 +138,7 @@ def extract_operand(soap_xml, operation, service, request=True):
     # 2. some SOAP messages have "soapenv" instead of "SOAP-ENV" expected in extracting soap_body
     # 3. Erroneous spaces in some attributes (/feedAttributeName /placeholdeType) throws off the xmltodict.parse()
     soap_xml = soap_xml.replace("ns1:", "") \
+                       .replace("ns2:", "") \
                        .replace("soapenv", "SOAP-ENV") \
                        .replace("/feed AttributeName", "/feedAttributeName") \
                        .replace("/placeholde Type", "/placeholdeType")
