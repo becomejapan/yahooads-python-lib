@@ -167,6 +167,10 @@ def extract_operand(soap_xml, operation, service, request=True):
             # res = soap_body["get"]["selector"]
             # in case of DictionaryService op = [ getDisapprovalReason | getGeographicLocation]
             return soap_body[operation]["selector"] if request else soap_body[operation+"Response"]
+        elif soap_body.get(operation):
+            return soap_body[operation]
+        elif soap_body.get(operation+"Response"):
+            return soap_body[operation+"Response"]
         else:
             print "\tUnrecognized operation {}".format(operation)
             return {}
