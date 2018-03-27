@@ -133,16 +133,15 @@ def extract_operand(soap_xml, operation, service, request=True):
                  response - getResponse (for get) or mutateResponse for (ADD | SET | REMOVE)
     """
     # Clean up known issues with documentation XML files, so that the xmltodict.parse() won't fail
-    # 1. remove ns1: => xmltodict.parse() will have "ns1:" prefix for all tags/keys otherwise. Attempt to rectify this
-    #    with namespace aware parsing doesn't work well yet.
-    # 2. some SOAP messages have "soapenv" instead of "SOAP-ENV" expected in extracting soap_body
-    # 3. Erroneous spaces in some attributes (/feedAttributeName /placeholdeType) throws off the xmltodict.parse()
+    # 1. some SOAP messages have "soapenv" instead of "SOAP-ENV" expected in extracting soap_body
+    # 2. Erroneous spaces in some attributes (/feedAttributeName /placeholdeType) throws off the xmltodict.parse()
     soap_xml = soap_xml.replace("soapenv", "SOAP-ENV") \
                        .replace(":feed AttributeName", ":feedAttributeName") \
                        .replace(":placeholde Type", ":placeholderType")
-    # 5. Correct some ill-formed request header tags in SOAP messages
+    # 3. Correct some ill-formed request header tags in SOAP messages
     #    <ns1:RequestHeader> ... <ns1:RequestHeader>  => <ns1:RequestHeader> ... </ns1:RequestHeader>
-    soap_xml = re.sub(r"<(ns[1-9]:)RequestHeader>(\s+</SOAP-ENV:Header>)", r"</\1RequestHeader>\2", soap_xml)
+    soap_xml = re.sub(r"<(ns[1-9]:)RequestHeader>(\s+</SOAP-ENV:Header>)",  # find ending tag with </SOAP-ENV
+		      r"</\1RequestHeader>\2", soap_xml)
 
     def fix_xsi_type(_, key, value):
         """replace @xsi:type keys created by xmltodict with xsi_type expected by promotionalads-python-lib"""
